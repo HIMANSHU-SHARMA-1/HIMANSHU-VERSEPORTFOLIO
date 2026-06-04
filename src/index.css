@@ -1133,3 +1133,127 @@ a {
         font-size: 1.8rem;
     }
 }
+
+/* --- Mobile Responsiveness for Small Devices --- */
+@media (max-width: 600px) {
+    .stats-marquee {
+        padding: 12px 0;
+        margin: 30px 0;
+    }
+    .marquee-track {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 140px;
+    }
+
+    .main-header {
+        height: 60px;
+        top: 48px;
+    }
+
+    .logo-text {
+        font-size: 0.95rem;
+        padding: 4px 8px;
+    }
+
+    .logo-box {
+        padding-right: 12px;
+    }
+
+    .mobile-menu-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nav-links {
+        top: 58px;
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .theme-text-label {
+        display: none;
+    }
+
+    .color-palette-bar {
+        gap: 6px;
+        padding: 0 8px;
+    }
+
+    .color-dot {
+        width: 18px;
+        height: 18px;
+    }
+
+    .hero-text-card {
+        padding: 35px 16px 25px 16px;
+    }
+
+    .hero-title {
+        font-size: 1.85rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    .float-sticker-1 {
+        left: 15px;
+        top: -15px;
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+
+    .float-sticker-2 {
+        right: 15px;
+        bottom: -12px;
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+
+    .section-heading {
+        font-size: 1.45rem !important;
+        padding: 8px 12px;
+        margin-bottom: 25px;
+    }
+
+    .section-subheading {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+
+    .card, .project-card, .skills-card, .skills-stickers, .contact-card, .connect-sidebar {
+        padding: 24px 16px !important;
+    }
+
+    .btn {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+        width: 100%; /* stack CTA buttons neatly on tiny screens */
+    }
+
+    .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .skills-progress-group {
+        gap: 16px;
+    }
+
+    .skill-sticker {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+
+    .about-main-card h3, .about-details-card h3, .projects-card h3, .skills-card h3, .skills-stickers h3, .contact-card-header h3, .connect-sidebar h3 {
+        font-size: 1.4rem !important;
+    }
+}
+

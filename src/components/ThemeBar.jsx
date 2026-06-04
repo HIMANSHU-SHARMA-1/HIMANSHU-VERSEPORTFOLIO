@@ -15,7 +15,7 @@ function ThemeBar({ currentTheme, onChangeTheme }) {
   return (
     <div className="color-palette-bar">
       <span className="palette-label">
-        <Palette /> SYSTEM THEME:
+        <Palette /> <span className="theme-text-label">SYSTEM THEME:</span>
       </span>
       <div className="color-options">
         {THEMES.map(theme => (
