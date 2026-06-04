@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowDownRight, Sparkles, User, Terminal } from 'lucide-react';
+import { ArrowDownRight, Sparkles, Terminal } from 'lucide-react';
+import heroImage from '../assets/hero.png';
 
 function Hero() {
   const [rotations, setRotations] = useState({ sticker1: -3, sticker2: 4 });
@@ -48,8 +49,8 @@ function Hero() {
             <div className="window-titlebar">
               <div className="window-controls">
                 <span className="dot dot-close"></span>
-                <span class="dot dot-minimize"></span>
-                <span class="dot dot-maximize"></span>
+                <span className="dot dot-minimize"></span>
+                <span className="dot dot-maximize"></span>
               </div>
               <span className="window-title" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                 <Terminal size={12} /> profile_summary.sh
@@ -58,8 +59,12 @@ function Hero() {
             <div className="window-body">
               <div className="avatar-container">
                 <div className="avatar-frame">
-                  <div className="pixel-avatar">
-                    <User className="avatar-placeholder-icon" />
+                  <div className="pixel-avatar" style={{ overflow: 'hidden' }}>
+                    <img 
+                      src={heroImage} 
+                      alt="Himanshu's Neobrutalist Avatar" 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                    />
                   </div>
                 </div>
               </div>
