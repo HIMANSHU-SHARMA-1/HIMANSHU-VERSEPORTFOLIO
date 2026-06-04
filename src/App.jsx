@@ -42,8 +42,10 @@ function App() {
       <Header scrolled={scrolled} />
 
       {/* Main Layout Content */}
-      <main className="content-wrapper">
-        <Hero />
+      <main className="main-layout">
+        <div className="content-wrapper">
+          <Hero />
+        </div>
         
         {/* Ticker Banner */}
         <div className="stats-marquee">
@@ -61,10 +63,12 @@ function App() {
           </div>
         </div>
 
-        <About />
-        <Projects />
-        <Skills />
-        <Contact />
+        <div className="content-wrapper">
+          <About />
+          <Projects />
+          <Skills />
+          <Contact />
+        </div>
       </main>
 
       {/* Footer */}
