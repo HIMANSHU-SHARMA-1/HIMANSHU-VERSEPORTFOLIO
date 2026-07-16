@@ -20,6 +20,16 @@ const GithubIcon = () => (
 const PROJECTS = [
   {
     number: '[01]',
+    tag: 'MERN & SOCKETS',
+    title: 'CollabSpace',
+    subtitle: 'Real-time Collaboration Hub',
+    desc: 'Designed a team workspace platform supporting dynamic project workflows. Employs JWT authentication, Join Request flows (leader approvals with notifications), real-time chat rooms via Socket.io, and an AI recommendation algorithm to suggest projects matching user skillsets.',
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Socket.io', 'AI Matching'],
+    bgClass: 'bg-orange',
+    links: { github: 'https://github.com/HIMANSHU-SHARMA-1/collabspace.git' }
+  },
+  {
+    number: '[02]',
     tag: 'FLAGSHIP AI MERN',
     title: 'InterviewIQ.ai',
     subtitle: 'AI-Powered Mock Interview Platform',
@@ -33,7 +43,7 @@ const PROJECTS = [
     }
   },
   {
-    number: '[02]',
+    number: '[03]',
     tag: 'FULL STACK MERN',
     title: 'MedEase',
     subtitle: 'Medical Report Analysis System',
@@ -47,7 +57,7 @@ const PROJECTS = [
     }
   },
   {
-    number: '[03]',
+    number: '[04]',
     tag: 'API ENGINE',
     title: 'ShareSpace',
     subtitle: 'Secure Cloud Uploads',
@@ -57,7 +67,7 @@ const PROJECTS = [
     links: { github: '#' }
   },
   {
-    number: '[04]',
+    number: '[05]',
     tag: 'REAL-TIME',
     title: 'DevConnect',
     subtitle: 'Developer Community Center',
@@ -67,7 +77,7 @@ const PROJECTS = [
     links: { github: '#' }
   },
   {
-    number: '[05]',
+    number: '[06]',
     tag: 'FRONTEND UI',
     title: 'TaskForge',
     subtitle: 'Kanban Task Manager',
@@ -75,16 +85,6 @@ const PROJECTS = [
     tech: ['React.js', 'Redux Toolkit', 'CSS Grid', 'Node.js', 'Mongoose'],
     bgClass: 'bg-purple',
     links: { github: '#' }
-  },
-  {
-    number: '[06]',
-    tag: 'MERN & SOCKETS',
-    title: 'CollabSpace',
-    subtitle: 'Real-time Collaboration Hub',
-    desc: 'Designed a team workspace platform supporting dynamic project workflows. Employs JWT authentication, Join Request flows (leader approvals with notifications), real-time chat rooms via Socket.io, and an AI recommendation algorithm to suggest projects matching user skillsets.',
-    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Socket.io', 'AI Matching'],
-    bgClass: 'bg-orange',
-    links: { github: 'https://github.com/HIMANSHU-SHARMA-1/collabspace.git' }
   }
 ];
 
