@@ -11,29 +11,48 @@ function App() {
   const [theme, setTheme] = useState('theme-yellow');
   const [scrolled, setScrolled] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(true);
+  const [soundProfile, setSoundProfile] = useState('bell'); // Default to soft chime!
 
   // Soft melodious click sound synthesis using Web Audio API
-  const playClickSound = () => {
+  const playClickSound = (profileName = soundProfile) => {
     try {
       const AudioContext = window.AudioContext || window.webkitAudioContext;
       if (!AudioContext) return;
       const ctx = new AudioContext();
       
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      
-      osc.type = 'sine'; // Soft, clean sound
-      osc.frequency.setValueAtTime(650, ctx.currentTime); // high initial pitch
-      osc.frequency.exponentialRampToValueAtTime(320, ctx.currentTime + 0.08); // downward ramp
-      
-      gain.gain.setValueAtTime(0.035, ctx.currentTime); // soft volume (3.5%)
-      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.08); // decay over 80ms
-      
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      
-      osc.start();
-      osc.stop(ctx.currentTime + 0.08);
+      const playTone = (freq, duration, type = 'sine', volume = 0.035, slideFreq = null) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+        if (slideFreq) {
+          osc.frequency.exponentialRampToValueAtTime(slideFreq, ctx.currentTime + duration);
+        }
+        gain.gain.setValueAtTime(volume, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + duration);
+      };
+
+      if (profileName === 'bell') {
+        // Melodious soft chime chord (C5 + E5)
+        playTone(523.25, 0.18, 'sine', 0.02);
+        setTimeout(() => playTone(659.25, 0.16, 'sine', 0.015), 15);
+      } else if (profileName === 'bubble') {
+        // Upward water drop bubble sound
+        playTone(300, 0.06, 'sine', 0.03, 1400);
+      } else if (profileName === 'arcade') {
+        // Retro triangle wave blip
+        playTone(180, 0.08, 'triangle', 0.025, 900);
+      } else if (profileName === 'pop') {
+        // Mechanical switch click
+        playTone(650, 0.07, 'sine', 0.035, 320);
+      } else if (profileName === 'cosmic') {
+        // High frequency twinkle
+        playTone(1500, 0.1, 'sine', 0.012, 2400);
+      }
     } catch (e) {
       // Audio context blocked or not supported
     }
@@ -68,13 +87,13 @@ function App() {
       
       const target = e.target.closest('button, a, .color-dot, .skill-sticker, .coordinate-item');
       if (target) {
-        playClickSound();
+        playClickSound(soundProfile);
       }
     };
 
     document.addEventListener('click', handleGlobalClick);
     return () => document.removeEventListener('click', handleGlobalClick);
-  }, [soundEnabled]);
+  }, [soundEnabled, soundProfile]);
 
   return (
     <>
@@ -87,8 +106,14 @@ function App() {
           setSoundEnabled(!soundEnabled);
           // Play a feed blip to give immediate feedback when unmuting
           if (!soundEnabled) {
-            setTimeout(playClickSound, 20);
+            setTimeout(() => playClickSound(soundProfile), 20);
           }
+        }}
+        soundProfile={soundProfile}
+        onChangeSoundProfile={(profile) => {
+          setSoundProfile(profile);
+          // Play immediately so the user can test the sound
+          setTimeout(() => playClickSound(profile), 20);
         }}
       />
 

@@ -11,7 +11,14 @@ const THEMES = [
   { id: 'theme-red', name: 'Bright Red', className: 'btn-red' }
 ];
 
-function ThemeBar({ currentTheme, onChangeTheme, soundEnabled, onToggleSound }) {
+function ThemeBar({ 
+  currentTheme, 
+  onChangeTheme, 
+  soundEnabled, 
+  onToggleSound, 
+  soundProfile, 
+  onChangeSoundProfile 
+}) {
   return (
     <div className="color-palette-bar">
       <span className="palette-label">
@@ -28,6 +35,36 @@ function ThemeBar({ currentTheme, onChangeTheme, soundEnabled, onToggleSound }) 
           />
         ))}
       </div>
+
+      {/* Sound Profile Select Dropdown */}
+      {soundEnabled && (
+        <select 
+          value={soundProfile} 
+          onChange={(e) => onChangeSoundProfile(e.target.value)}
+          title="Change Click Sound Effect"
+          aria-label="Sound Profile"
+          className="theme-text-label"
+          style={{
+            background: 'var(--clr-white)',
+            border: '2px solid var(--clr-black)',
+            fontFamily: 'Space Mono, monospace',
+            fontWeight: 700,
+            fontSize: '0.75rem',
+            padding: '2px 4px',
+            cursor: 'pointer',
+            marginLeft: '12px',
+            outline: 'none',
+            boxShadow: '2px 2px 0 var(--clr-black)',
+            textTransform: 'uppercase'
+          }}
+        >
+          <option value="bell">🔔 Soft Chime</option>
+          <option value="bubble">💧 Water Drop</option>
+          <option value="arcade">🕹️ Arcade Rise</option>
+          <option value="pop">🔌 Switch Click</option>
+          <option value="cosmic">✨ Cosmic Twinkle</option>
+        </select>
+      )}
       
       {/* Sound Toggle Button */}
       <button 
