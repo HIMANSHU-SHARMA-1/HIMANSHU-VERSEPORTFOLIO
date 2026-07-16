@@ -75,6 +75,16 @@ const PROJECTS = [
     tech: ['React.js', 'Redux Toolkit', 'CSS Grid', 'Node.js', 'Mongoose'],
     bgClass: 'bg-purple',
     links: { github: '#' }
+  },
+  {
+    number: '[06]',
+    tag: 'MERN & SOCKETS',
+    title: 'CollabSpace',
+    subtitle: 'Real-time Collaboration Hub',
+    desc: 'Designed a team workspace platform supporting dynamic project workflows. Employs JWT authentication, Join Request flows (leader approvals with notifications), real-time chat rooms via Socket.io, and an AI recommendation algorithm to suggest projects matching user skillsets.',
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Socket.io', 'AI Matching'],
+    bgClass: 'bg-orange',
+    links: { github: 'https://github.com/HIMANSHU-SHARMA-1/collabspace.git' }
   }
 ];
 
