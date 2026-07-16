@@ -1,5 +1,5 @@
 import React from 'react';
-import { Palette } from 'lucide-react';
+import { Palette, Volume2, VolumeX } from 'lucide-react';
 
 const THEMES = [
   { id: 'theme-yellow', name: 'Neon Yellow', className: 'btn-yellow' },
@@ -11,7 +11,7 @@ const THEMES = [
   { id: 'theme-red', name: 'Bright Red', className: 'btn-red' }
 ];
 
-function ThemeBar({ currentTheme, onChangeTheme }) {
+function ThemeBar({ currentTheme, onChangeTheme, soundEnabled, onToggleSound }) {
   return (
     <div className="color-palette-bar">
       <span className="palette-label">
@@ -28,6 +28,38 @@ function ThemeBar({ currentTheme, onChangeTheme }) {
           />
         ))}
       </div>
+      
+      {/* Sound Toggle Button */}
+      <button 
+        className="sound-toggle-btn"
+        onClick={onToggleSound}
+        title={soundEnabled ? "Mute Click Sounds" : "Unmute Click Sounds"}
+        aria-label="Toggle Sound"
+        style={{
+          background: 'none',
+          border: '2px solid var(--clr-black)',
+          cursor: 'pointer',
+          padding: '4px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginLeft: '12px',
+          backgroundColor: soundEnabled ? 'var(--clr-green)' : 'var(--clr-red)',
+          color: soundEnabled ? 'var(--clr-black)' : 'var(--clr-white)',
+          boxShadow: '2px 2px 0 var(--clr-black)',
+          transition: 'transform 0.1s'
+        }}
+        onMouseDown={(e) => {
+          e.currentTarget.style.transform = 'translate(1px, 1px)';
+          e.currentTarget.style.boxShadow = '1px 1px 0 var(--clr-black)';
+        }}
+        onMouseUp={(e) => {
+          e.currentTarget.style.transform = 'translate(0, 0)';
+          e.currentTarget.style.boxShadow = '2px 2px 0 var(--clr-black)';
+        }}
+      >
+        {soundEnabled ? <Volume2 size={16} /> : <VolumeX size={16} />}
+      </button>
     </div>
   );
 }

@@ -10,6 +10,34 @@ import Contact from './components/Contact';
 function App() {
   const [theme, setTheme] = useState('theme-yellow');
   const [scrolled, setScrolled] = useState(false);
+  const [soundEnabled, setSoundEnabled] = useState(true);
+
+  // Soft melodious click sound synthesis using Web Audio API
+  const playClickSound = () => {
+    try {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContext) return;
+      const ctx = new AudioContext();
+      
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      
+      osc.type = 'sine'; // Soft, clean sound
+      osc.frequency.setValueAtTime(650, ctx.currentTime); // high initial pitch
+      osc.frequency.exponentialRampToValueAtTime(320, ctx.currentTime + 0.08); // downward ramp
+      
+      gain.gain.setValueAtTime(0.035, ctx.currentTime); // soft volume (3.5%)
+      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.08); // decay over 80ms
+      
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      
+      osc.start();
+      osc.stop(ctx.currentTime + 0.08);
+    } catch (e) {
+      // Audio context blocked or not supported
+    }
+  };
 
   // Sync theme to body class
   useEffect(() => {
@@ -33,10 +61,36 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Global click listener to play soft switch blips
+  useEffect(() => {
+    const handleGlobalClick = (e) => {
+      if (!soundEnabled) return;
+      
+      const target = e.target.closest('button, a, .color-dot, .skill-sticker, .coordinate-item');
+      if (target) {
+        playClickSound();
+      }
+    };
+
+    document.addEventListener('click', handleGlobalClick);
+    return () => document.removeEventListener('click', handleGlobalClick);
+  }, [soundEnabled]);
+
   return (
     <>
       {/* Palette Changer Widget */}
-      <ThemeBar currentTheme={theme} onChangeTheme={setTheme} />
+      <ThemeBar 
+        currentTheme={theme} 
+        onChangeTheme={setTheme} 
+        soundEnabled={soundEnabled}
+        onToggleSound={() => {
+          setSoundEnabled(!soundEnabled);
+          // Play a feed blip to give immediate feedback when unmuting
+          if (!soundEnabled) {
+            setTimeout(playClickSound, 20);
+          }
+        }}
+      />
 
       {/* Navigation Header */}
       <Header scrolled={scrolled} />
