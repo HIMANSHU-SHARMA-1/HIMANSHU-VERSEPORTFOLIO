@@ -26,7 +26,10 @@ const PROJECTS = [
     desc: 'Designed a team workspace platform supporting dynamic project workflows. Employs JWT authentication, Join Request flows (leader approvals with notifications), real-time chat rooms via Socket.io, and an AI recommendation algorithm to suggest projects matching user skillsets.',
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Socket.io', 'AI Matching'],
     bgClass: 'bg-orange',
-    links: { github: 'https://github.com/HIMANSHU-SHARMA-1/collabspace.git' }
+    links: { 
+      github: 'https://github.com/HIMANSHU-SHARMA-1/collabspace.git',
+      live: 'https://collabspace-1-gwqm.onrender.com/'
+    }
   },
   {
     number: '[02]',
