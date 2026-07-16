@@ -24,7 +24,7 @@ const PROJECTS = [
     title: 'CollabSpace',
     subtitle: 'Real-time Collaboration Hub',
     desc: 'Designed a team workspace platform supporting dynamic project workflows. Employs JWT authentication, Join Request flows (leader approvals with notifications), real-time chat rooms via Socket.io, and an AI recommendation algorithm to suggest projects matching user skillsets.',
-    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Socket.io', 'AI Matching'],
+    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'Google GenAI', 'Material UI', 'Sentry Monitoring', 'Jest / Supertest', 'Rough.js', 'JWT', 'Multer'],
     bgClass: 'bg-orange',
     links: { 
       github: 'https://github.com/HIMANSHU-SHARMA-1/collabspace.git',
