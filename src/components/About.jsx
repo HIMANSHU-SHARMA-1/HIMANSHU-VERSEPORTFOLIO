@@ -49,8 +49,9 @@ function About() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '5px' }}>
               <span className="sticker-badge" style={{ backgroundColor: 'var(--clr-yellow)' }}>MERN STACK - IIT Kanpur</span>
               <span className="sticker-badge" style={{ backgroundColor: 'var(--clr-cyan)' }}>Skyscanner Front-End - Forage</span>
+              <span className="sticker-badge" style={{ backgroundColor: 'var(--clr-purple)', color: 'white' }}>Claude Code In Action - Anthropic</span>
               <span className="sticker-badge" style={{ backgroundColor: 'var(--clr-pink)', color: 'white' }}>CSS - Oneroadmap</span>
-              <span className="sticker-badge" style={{ backgroundColor: 'var(--clr-purple)', color: 'white' }}>Version Control - Meta</span>
+              <span className="sticker-badge" style={{ backgroundColor: 'var(--clr-blue)', color: 'white' }}>Version Control with Git - Meta</span>
             </div>
           </div>
         </div>

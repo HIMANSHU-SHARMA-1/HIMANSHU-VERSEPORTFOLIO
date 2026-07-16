@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Send, CheckSquare, Loader } from 'lucide-react';
+import { Mail, Phone, Send, CheckSquare, Loader } from 'lucide-react';
 
 // Custom inline SVG for Github to bypass brand icon deprecation in Lucide-react
 const GithubIcon = () => (
@@ -142,12 +142,16 @@ function Contact() {
               <Mail /> himanshusharma20969@gmail.com
             </a>
             
-            <a href="https://www.linkedin.com/in/himanshu-939765298/" target="_blank" rel="noopener noreferrer" className="coordinate-item">
+            <a href="tel:+919837808807" className="coordinate-item">
+              <Phone /> +91-9837808807
+            </a>
+            
+            <a href="https://www.linkedin.com/in/himanshu939765298/" target="_blank" rel="noopener noreferrer" className="coordinate-item">
               <LinkedinIcon /> linkedin.com/in/himanshu
             </a>
             
-            <a href="#" className="coordinate-item">
-              <GithubIcon /> github.com/himanshufeb-26
+            <a href="https://github.com/HIMANSHU-SHARMA-1" target="_blank" rel="noopener noreferrer" className="coordinate-item">
+              <GithubIcon /> github.com/HIMANSHU-SHARMA-1
             </a>
           </div>
         </div>

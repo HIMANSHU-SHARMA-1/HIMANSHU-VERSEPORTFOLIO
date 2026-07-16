@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowDownRight, Sparkles, Terminal } from 'lucide-react';
+import { ArrowDownRight, Sparkles, Terminal, Download } from 'lucide-react';
 import heroImage from '../assets/hero.png';
 
 function Hero() {
@@ -37,7 +37,10 @@ function Hero() {
             <a href="#projects" className="btn btn-primary">
               VIEW PROJECTS <ArrowDownRight />
             </a>
-            <a href="#contact" className="btn btn-secondary">
+            <a href="/resume.pdf" download="Himanshu_Sharma_Resume.pdf" className="btn btn-secondary">
+              DOWNLOAD CV <Download />
+            </a>
+            <a href="#contact" className="btn btn-secondary" style={{ backgroundColor: 'var(--clr-cyan)', color: 'var(--clr-black)' }}>
               GET IN TOUCH <Sparkles />
             </a>
           </div>

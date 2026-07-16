@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 const SKILLS_BARS = [
-  { name: 'Frontend Development (HTML5, CSS3, React.js)', pct: 92, bg: 'bg-red' },
-  { name: 'Backend Development (Node.js, Express.js, REST APIs)', pct: 88, bg: 'bg-blue' },
-  { name: 'Database Systems (MongoDB, Mongoose, CRUD)', pct: 85, bg: 'bg-purple' },
-  { name: 'Tools & Platforms (Git, GitHub, Netlify, Render, Postman)', pct: 90, bg: 'bg-green' }
+  { name: 'Frontend (React.js, Material UI, Tailwind CSS, HTML5, CSS3, JS)', pct: 94, bg: 'bg-red' },
+  { name: 'Backend & APIs (Node.js, Express.js, Socket.io, REST APIs, JWT, Multer)', pct: 90, bg: 'bg-blue' },
+  { name: 'Databases & Testing (MongoDB, Mongoose, Jest, Supertest, In-memory DB)', pct: 87, bg: 'bg-purple' },
+  { name: 'Tools & Practices (Git, GitHub, Postman, Vite, Vercel, Render, Sentry, Agile)', pct: 92, bg: 'bg-green' }
 ];
 
 const STICKERS = [
@@ -13,17 +13,24 @@ const STICKERS = [
   { name: 'EXPRESS.JS', bg: 'bg-green' },
   { name: 'MONGODB', bg: 'bg-purple' },
   { name: 'MONGOOSE', bg: 'bg-orange' },
+  { name: 'TAILWIND CSS', bg: 'bg-blue' },
+  { name: 'MATERIAL UI', bg: 'bg-pink' },
   { name: 'FIREBASE', bg: 'bg-red' },
   { name: 'OAUTH', bg: 'bg-blue' },
+  { name: 'JEST', bg: 'bg-purple' },
+  { name: 'SUPERTEST', bg: 'bg-green' },
+  { name: 'OPENROUTER AI', bg: 'bg-yellow' },
+  { name: 'RECHARTS', bg: 'bg-orange' },
+  { name: 'JSPDF', bg: 'bg-cyan' },
+  { name: 'SENTRY', bg: 'bg-red' },
+  { name: 'MOTION', bg: 'bg-pink' },
+  { name: 'VITE', bg: 'bg-yellow' },
+  { name: 'VERCEL', bg: 'bg-blue' },
   { name: 'VIBE CODER', bg: 'bg-yellow' },
   { name: 'REST APIS', bg: 'bg-pink' },
   { name: 'GIT', bg: 'bg-red' },
   { name: 'GITHUB', bg: 'bg-blue' },
-  { name: 'POSTMAN', bg: 'bg-green' },
-  { name: 'NETLIFY', bg: 'bg-pink' },
-  { name: 'RENDER', bg: 'bg-cyan' },
-  { name: 'BOOTSTRAP', bg: 'bg-yellow' },
-  { name: 'FIGMA', bg: 'bg-purple' }
+  { name: 'POSTMAN', bg: 'bg-green' }
 ];
 
 function Skills() {
